@@ -22,6 +22,8 @@ func main() {
 	delete(colors, "red") // Deleteing an entry
 	fmt.Println(colors)
 
+	deleteColor(colors) // Works because is reference type, not value type and we access directly to the map and not to a copy
+
 	printMap(colors)
 }
 
@@ -29,4 +31,8 @@ func printMap(c map[string]string) {
 	for color, hex := range c {
 		fmt.Println("Hex code for", color, "is", hex)
 	}
+}
+
+func deleteColor(c map[string]string) {
+	delete(c, "black")
 }
