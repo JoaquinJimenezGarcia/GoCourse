@@ -3,8 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	colors := map[string]string {
-		"red": "#ff0000",
+	colors := map[string]string{
+		"red":   "#ff0000",
 		"black": "#ffffff",
 		"white": "#000000",
 		"green": "#4fg567",
@@ -21,4 +21,12 @@ func main() {
 
 	delete(colors, "red") // Deleteing an entry
 	fmt.Println(colors)
+
+	printMap(colors)
+}
+
+func printMap(c map[string]string) {
+	for color, hex := range c {
+		fmt.Println("Hex code for", color, "is", hex)
+	}
 }
